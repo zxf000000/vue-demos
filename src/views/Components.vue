@@ -2,9 +2,6 @@
   <div class="components-container">
     <div>
       <b-tabs content-class="mt-3">
-        <b-tab title="MuseumSwiper" active>
-          <MuseumSwiper></MuseumSwiper>
-        </b-tab>
         <b-tab title="Museum">
           <Museum></Museum>
         </b-tab>
@@ -31,7 +28,6 @@
         <b-tab title="cardAnimation">
           <AnimationCard></AnimationCard>
         </b-tab>
-
         <b-tab title="Fade">
           <FadeAnimation></FadeAnimation>
         </b-tab>
@@ -48,11 +44,10 @@ import image from '@/assets/unnamed.jpg';
 import AnimationCard from "@/views/componenets/AnimationCard";
 import Museum from "@/components/Museum/Museum";
 import FadeAnimation from "@/components/fade-animation";
-import MuseumSwiper from "@/components/MuseumSwiper/MuseumSwiper";
 
 export default {
   name: "Components",
-  components: { MuseumSwiper, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
+  components: { FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {
     tapStart() {
       this.$refs.loading.startAnimation();

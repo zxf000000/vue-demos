@@ -33,6 +33,10 @@ const MoveMixin = {
             parallax: null,
             lastOffset: 0,
             shouldSlide: true,
+            wheelData: {
+                threshold: 400,
+                totalDelta: 0,
+            },
         }
     },
     methods: {
@@ -48,9 +52,16 @@ const MoveMixin = {
         },
         wheelChange(e) {
             this.resetAll();
-          this.data.current = this.lastOffset + e.deltaY;
-          this.lastOffset = this.data.current;
-          this.clamp();
+            this.wheelData.totalDelta += e.deltaY;
+            if (Math.abs(this.wheelData.totalDelta) >= this.wheelData.threshold) {
+                this.data.current = this.lastOffset + this.wheelData.totalDelta;
+                this.lastOffset = this.data.current;
+                this.clamp();
+                this.wheelData.totalDelta = 0;
+            }
+
+
+
         },
             drag(e) {
               this.data.current = this.lastOffset + e.clientX - this.data.on;
