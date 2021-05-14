@@ -2,6 +2,9 @@
   <div class="components-container">
     <div>
       <b-tabs content-class="mt-3">
+        <b-tab title="MuseumVertical">
+          <MuseumVertical></MuseumVertical>
+        </b-tab>
         <b-tab title="Museum">
           <Museum></Museum>
         </b-tab>
@@ -44,10 +47,11 @@ import image from '@/assets/unnamed.jpg';
 import AnimationCard from "@/views/componenets/AnimationCard";
 import Museum from "@/components/Museum/Museum";
 import FadeAnimation from "@/components/fade-animation";
+import MuseumVertical from "@/components/MuseumVertical/MuseumVertical";
 
 export default {
   name: "Components",
-  components: { FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
+  components: {MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {
     tapStart() {
       this.$refs.loading.startAnimation();
