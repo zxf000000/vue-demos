@@ -44,14 +44,20 @@ const MoveMixin = {
         },
         slideToOffset(offset) {
             this.data.current = offset;
+
+        },
+        wheelChange(e) {
+            this.resetAll();
+          this.data.current = this.lastOffset + e.deltaY;
+          this.lastOffset = this.data.current;
+          this.clamp();
         },
             drag(e) {
               this.data.current = this.lastOffset + e.clientX - this.data.on;
               this.clamp();
             },
             clamp() {
-                console.log(this.data.current);
-                // this.data.current = Math.min(Math.max(this.data.current, this.bounds.min), this.bounds.max)
+                this.data.current = Math.min(Math.max(this.data.current, this.bounds.min), this.bounds.max)
             },
             run() {
               this.data.last.one = math.lerp(this.data.last.one, this.data.current, 0.085);

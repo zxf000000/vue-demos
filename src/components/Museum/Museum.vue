@@ -4,6 +4,7 @@
        @mouseup="mouseUp"
        @mousemove="mouseMove"
        @mouseleave="mouseUp"
+       @wheel.passive="wheelChange"
   >
     <div class="pics" ref="pics" >
       <div
