@@ -26,11 +26,13 @@ const MoveMixin = {
             data: null,
             bounds: null,
             state: {
-                dragging: false
+                dragging: false,
+                moving: false,
             },
             rAF: null,
             parallax: null,
             lastOffset: 0,
+            shouldSlide: true,
         }
     },
     methods: {
@@ -73,12 +75,15 @@ const MoveMixin = {
                 })
               this.requestAnimationFrame();
             },
-            mouseDown(e) {
+        mouseDown(e) {
+            if (this.shouldSlide) {
                 this.state.dragging = true;
                 this.data.on = e.clientX;
                 // TODO: 这里是否需要复位
+                console.log(e);
                 this.resetAll();
-            },
+            }
+        },
             mouseUp() {
               this.state.dragging = false;
               this.lastOffset = this.data.current;
