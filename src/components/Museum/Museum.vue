@@ -34,12 +34,13 @@ import pic6 from '@/assets/img/6.jpg';
 import pic7 from '@/assets/img/7.jpg';
 import pic8 from '@/assets/img/8.jpg';
 import CalculateSizeMixin from "@/mixins/CalculateSizeMixin";
-import MoveMixin from "@/mixins/MoveMixin";
+// import MoveMixin from "@/mixins/MoveMixin";
+import RAFMixin from "@/mixins/RAFMixin";
 
 export default {
   name: "Museum",
   components: {PicCard},
-  mixins: [CalculateSizeMixin, MoveMixin],
+  mixins: [CalculateSizeMixin, RAFMixin],
   data() {
     return {
       pics: [
@@ -97,6 +98,8 @@ export default {
     },
     hoverItem(currentIndex) {
       console.log('hover item');
+      // hover 的时候不能拖动
+      this.canSlide = false;
       this.$refs.picCard[currentIndex].hoverFocus();
       if (!this.isTapping) {
         this.scaleDownItems(currentIndex);
@@ -120,6 +123,8 @@ export default {
       });
     },
     leave() {
+      // 鼠标离开图片的时候可以拖动
+      this.canSlide = true;
       this.$refs.slide.forEach((item, index) => {
         const card = this.$refs.picCard[index];
         card.noFocus();
@@ -133,6 +138,7 @@ export default {
       });
     },
     // 全部复位
+    // 会被 mixin 调用
     resetAll() {
       this.$refs.slide.forEach((item, index) => {
           TweenLite.to(item, {
@@ -143,10 +149,33 @@ export default {
           const card = this.$refs.picCard[index];
           card.hideText();
       });
+    },
+    /**
+     * raf 调用之后的方法, 用于做一些自定义处理
+     */
+    didRun() {
+      this.dom.elems.forEach(item => {
+        TweenLite.set(item, {
+          scale: this.data.bounce,
+        })
+      })
     }
   },
   mounted() {
+    // 配置一下mixin 的属性
+    this.el = this.$refs.container;
+    this.content = this.$refs.pics;
+    this.dom = {
+      el: this.el,
+      content: this.content,
+      elems: [...this.$refs.picCard.map(item => {
+        return item.$el;
+      })],
+      handle: this.$refs.scrollBar,
+    };
+    this.$nextTick(this.on);
   },
+
 }
 </script>
 

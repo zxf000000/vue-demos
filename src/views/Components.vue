@@ -5,7 +5,7 @@
         <b-tab title="MuseumVertical">
           <MuseumVertical></MuseumVertical>
         </b-tab>
-        <b-tab title="Museum">
+        <b-tab title="Museum" lazy>
           <Museum></Museum>
         </b-tab>
         <b-tab title="CircleLoading" >
