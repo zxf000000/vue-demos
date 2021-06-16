@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/test-page">Test</router-link> |
-      <router-link to="/components">Components</router-link>
-    </div>
+      <b-nav pills v-model="currentIndex">
+        <b-nav-item to="/">Home</b-nav-item>
+        <b-nav-item to="/test-page">Test</b-nav-item>
+        <b-nav-item to="/components">Components</b-nav-item>
+        <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
+      </b-nav>
     <router-view class="router-view"/>
   </div>
 </template>
@@ -15,6 +15,16 @@
 // import Web3 from 'web3';
 
 export default {
+  data() {
+    return {
+      currentIndex: 0,
+    };
+  },
+  methods() {
+  },
+  watch() {
+
+  },
   mounted() {
     // let web3 = new Web3(Web3.givenProvider);
     // let arr = [];
@@ -57,9 +67,11 @@ html, body {
   padding: 30px;
   position: fixed;
   top: 0;
+  width: 100%;
+  background: cornflowerblue;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #ffffff;
 
     &.router-link-exact-active {
       color: #42b983;

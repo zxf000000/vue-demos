@@ -8,15 +8,6 @@
 
 <script>
 import { TweenLite } from 'gsap';
-// const math = {
-//   // 线性插值,根据时间缓慢移动
-//   lerp: (a, b, n) => {
-//     return (1 - n) * a + n * b
-//   },
-//   norm: (value, min, max) => {
-//     return (value - min) / (max - min)
-//   }
-// }
 
 
 export default {
@@ -79,6 +70,7 @@ export default {
       height: calc(100% + 100px);
       object-fit: cover;
       margin-top: -100px;
+      -webkit-user-drag: none;
     }
     .ratio {
       position: absolute;

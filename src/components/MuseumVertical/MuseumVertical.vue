@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     // raf 计算属性
-    calculateData() {
+    didRun() {
       this.ratios.forEach((ratio, index) => {
         const card = this.$refs.card[index];
         // 计算 offset
@@ -83,9 +83,6 @@ export default {
           const index = this.$refs.item.indexOf(item.target);
           if (item.isIntersecting && item.rootBounds.top < item.intersectionRect.top) {
             this.ratios[index] = item.intersectionRatio;
-            if (index === 0) {
-              console.log(item);
-            }
           }
         });
       }, options);
@@ -98,8 +95,8 @@ export default {
     }
   },
   mounted() {
-    this.ratios = Array(8).fill(0);
-    this.lastRatios = Array(8).fill(0);
+    this.ratios = Array(16).fill(0);
+    this.lastRatios = Array(16).fill(0);
     this.addObserver();
     this.isVertical = true;
     this.el = this.$refs.container;
@@ -123,11 +120,11 @@ export default {
   height: 800px;
   background: yellowgreen;
   overflow: hidden;
+  user-select: none;
   .slide-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 800px;
     .slide {
       background: #cdcdcd;
       border: 1px solid red;

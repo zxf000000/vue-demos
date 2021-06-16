@@ -1,16 +1,5 @@
 
 // TODO: 还需要添加屏幕尺寸变化, 以及手机设备的关联 还有  H5版本的尺寸
-
-const math = {
-    // 线性插值,根据时间缓慢移动
-    lerp: (a, b, n) => {
-        return (1 - n) * a + n * b
-    },
-    norm: (value, min, max) => {
-        return (value - min) / (max - min)
-    }
-}
-
 const config = {
     height: window.innerHeight,
     width: window.innerWidth
@@ -45,7 +34,7 @@ const RAFMixin = {
             parallax: null,
             lastOffset: 0,
             wheelData: {
-                threshold: 600,
+                threshold: 400,
                 totalDelta: 0,
             },
             isTouchMove: false,
@@ -67,7 +56,6 @@ const RAFMixin = {
         slideToOffset(offset) {
             this.isTouchMove = false;
             this.data.current = offset;
-
         },
         wheelChange(e) {
             // this.isTouchMove = true;
@@ -75,8 +63,8 @@ const RAFMixin = {
             this.wheelData.totalDelta += e.deltaY;
             if (Math.abs(this.wheelData.totalDelta) >= this.wheelData.threshold) {
                 this.data.current = this.lastOffset + this.wheelData.totalDelta;
-                this.lastOffset = this.data.current;
                 this.clamp();
+                this.lastOffset = this.data.current;
                 this.wheelData.totalDelta = 0;
             }
         },
@@ -93,7 +81,7 @@ const RAFMixin = {
             this.data.current = Math.min(Math.max(this.data.current, this.bounds.min), this.bounds.max)
         },
         run() {
-            this.data.last = math.lerp(this.data.last, this.data.current, 0.085);
+            this.data.last = this.lerp(this.data.last, this.data.current, 0.055);
             this.data.last = Math.floor(this.data.last * 100) / 100;
             const diff = this.data.current - this.data.last;
             const acc = this.isVertical ? diff / config.height :  diff / config.width;
@@ -101,7 +89,6 @@ const RAFMixin = {
             this.data.bounce = 1 - Math.abs(velo * 0.55);
             // const skew = velo *7.5;
             if (this.isVertical) {
-                console.log(this.data.last);
                 TweenLite.set(this.dom.content, {
                     y: this.data.last.toFixed(2),
                 })
@@ -132,8 +119,13 @@ const RAFMixin = {
         },
         requestAnimationFrame() {
             this.rAF = requestAnimationFrame(this.run);
-        }
-
+        },
+        lerp(a, b, n) {
+            return (1 - n) * a + n * b
+        },
+        norm(value, min, max) {
+            return (value - min) / (max - min)
+        },
     },
     mounted() {
     }
