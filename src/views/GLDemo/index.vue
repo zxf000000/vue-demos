@@ -22,6 +22,8 @@ export default {
         {name: 'Texture', path: '/gl_demo/texture'},
         {name: 'ThreeJS', path: '/gl_demo/threejs'},
         {name: 'Points', path: '/gl_demo/three-points'},
+        {name: 'Texture1', path: '/gl_demo/texture1'},
+        {name: 'Shader', path: '/gl_demo/shader'},
       ]
     };
   },

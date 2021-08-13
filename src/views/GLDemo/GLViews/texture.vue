@@ -9,7 +9,7 @@ import {mat4} from 'gl-matrix';
 import image from '@/assets/img/1.jpg';
 export default {
   name: "texture",
-  date() {
+  data() {
     return {
       then: 0,
       cubeRotation: 0,

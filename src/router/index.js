@@ -36,8 +36,18 @@ const routes = [
         path: 'three-points',
         name: 'three-points',
         component: () => import('../views/GLDemo/GLViews/points'),
-      }
-    ]
+      },
+      {
+        path: 'texture1',
+        name: 'texture1',
+        component: () => import('../views/GLDemo/GLViews/texture1.vue'),
+      },
+      {
+        path: 'shader',
+        name: 'shader',
+        component: () => import('../views/GLDemo/GLViews/shader.vue'),
+      },
+    ],
   },
   {
     path: '/about',
@@ -81,6 +91,10 @@ const routes = [
   {
     path: '/components',
     component: () => import('../views/Components.vue')
+  },
+  {
+    path: '/svgs',
+    component: () => import('../views/svgs/index.vue')
   }
 ]
 

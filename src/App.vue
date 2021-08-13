@@ -5,6 +5,7 @@
         <b-nav-item to="/test-page">Test</b-nav-item>
         <b-nav-item to="/components">Components</b-nav-item>
         <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
+        <b-nav-item to="/svgs">SVGS</b-nav-item>
       </b-nav>
     <router-view class="router-view"/>
   </div>
@@ -60,6 +61,7 @@ html, body {
 
 .router-view {
   height: 100%;
+  width: 100%;
   margin-top: 100px;
 }
 
