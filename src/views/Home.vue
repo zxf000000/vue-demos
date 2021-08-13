@@ -1,20 +1,12 @@
 <template>
   <div class="home">
-    <div class="demo-list">
-      <div v-for="item in 30" :key="item" style="height: 200px; background-color: blue" @click="tapItem">
-      </div>
-    </div>
-    <transition name="fade">
-      <router-view class="router-view1">
-      </router-view>
-    </transition>
-
+    <b-button @click="tapConnect">Connect</b-button>
   </div>
 </template>
 
 <script>
 // import Web3 from "web3";
-import Web3Modal from "web3modal";
+// import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 // @ is an alias to /src
@@ -32,24 +24,48 @@ export default {
       this.$router.push('/drawerPage');
     },
     async tapConnect() {
-      const providerOptions = {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            rpc: {
-              80001: 'https://rpc-mumbai.maticvigil.com/'
-            },
-          },
-        }
-      };
-
-      const web3Modal = new Web3Modal({
-        providerOptions // required
+      const provider = new WalletConnectProvider({
+        rpc: {
+          137: "https://rpc-mumbai.matic.today",
+        },
       });
-      // console.log(web3Modal.cachedProvider, 'cachedProvider');
-      // web3Modal.clearCachedProvider();
-      const provider = await web3Modal.toggleModal();
-      console.log(provider);
+      const account = await provider.enable();
+      console.log(account);
+      // Subscribe to accounts change
+      provider.on("accountsChanged", (accounts) => {
+        console.log(accounts);
+      });
+
+// Subscribe to chainId change
+      provider.on("chainChanged", (chainId) => {
+        console.log(chainId);
+        console.log('chainchange');
+      });
+
+// Subscribe to session disconnection
+      provider.on("disconnect", (code, reason) => {
+        console.log('disconnect');
+        console.log(code, reason);
+      });
+
+      // const providerOptions = {
+      //   walletconnect: {
+      //     package: WalletConnectProvider,
+      //     options: {
+      //       rpc: {
+      //         80001: 'https://rpc-mumbai.maticvigil.com/'
+      //       },
+      //     },
+      //   }
+      // };
+
+      // const web3Modal = new Web3Modal({
+      //   providerOptions // required
+      // });
+      // // console.log(web3Modal.cachedProvider, 'cachedProvider');
+      // // web3Modal.clearCachedProvider();
+      // const provider = await web3Modal.toggleModal();
+      // console.log(provider);
       // const web3 = new Web3(provider);
       // console.log(web3);
       // const accounts = await web3.eth.getAccounts();
