@@ -5,7 +5,7 @@
         <b-nav-item to="/test-page">Test</b-nav-item>
         <b-nav-item to="/components">Components</b-nav-item>
         <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
-        <b-nav-item to="/svgs">SVGS</b-nav-item>
+        <b-nav-item to="/scrollspy">ScrollSpy</b-nav-item>
       </b-nav>
     <router-view class="router-view"/>
   </div>
@@ -20,11 +20,6 @@ export default {
     return {
       currentIndex: 0,
     };
-  },
-  methods() {
-  },
-  watch() {
-
   },
   mounted() {
     // let web3 = new Web3(Web3.givenProvider);
@@ -41,9 +36,14 @@ export default {
 
 <style lang="scss">
 
-html, body {
-  height: 100%;
-  width: 100%;
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
 #app {
@@ -58,13 +58,6 @@ html, body {
   justify-content: start;
   height: 100%;
 }
-
-.router-view {
-  height: 100%;
-  width: 100%;
-  margin-top: 100px;
-}
-
 #nav {
   padding: 30px;
   position: fixed;

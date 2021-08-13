@@ -1,11 +1,14 @@
 <template>
   <div class="home">
-    <div>
-      <p>
-        address: {{address}}
-      </p>
+    <div class="demo-list">
+      <div v-for="item in 30" :key="item" style="height: 200px; background-color: blue" @click="tapItem">
+      </div>
     </div>
-    <b-button @click="tapConnect">connect</b-button>
+    <transition name="fade">
+      <router-view class="router-view1">
+      </router-view>
+    </transition>
+
   </div>
 </template>
 
@@ -25,6 +28,9 @@ export default {
     }
   },
   methods: {
+    tapItem() {
+      this.$router.push('/drawerPage');
+    },
     async tapConnect() {
       const providerOptions = {
         walletconnect: {
@@ -56,5 +62,48 @@ export default {
 <style scoped lang="scss">
 .home {
   padding: 100px;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  overflow: auto;
+  &.noovaerflow {
+    overflow: hidden;
+  }
+  .demo-list {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 30px;
+    div {
+      cursor: pointer;
+    }
+  }
+  .router-view1 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    opacity: 1;
+    background-color: yellow;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+  }
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
+}
+
+.fade-enter, .fade-leave-to {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.fade-enter-to, .fade-leave {
+  background-color: rgba(0,0,0,0.5) !important;
+}
+
+
 </style>

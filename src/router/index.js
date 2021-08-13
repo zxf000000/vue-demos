@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import GLDemo from '../views/GLDemo/index';
+import DrawerPage from "@/views/DrawerPage";
 
 Vue.use(VueRouter)
 
@@ -9,7 +10,19 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: 'drawerPage',
+        name: 'DrawerPage',
+        component: DrawerPage,
+      }
+    ]
+  },
+  {
+    path: '/scrollspy',
+    name: 'scrollspy',
+    component: () => import('../views/scrollspy-demo/index.vue')
   },
   {
     path: '/gl_demo',

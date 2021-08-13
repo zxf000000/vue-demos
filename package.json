@@ -11,6 +11,7 @@
     "@walletconnect/web3-provider": "^1.4.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.6",
     "gl-matrix": "^3.3.0",
     "gsap": "^3.6.0",
     "sass": "^1.32.5",
