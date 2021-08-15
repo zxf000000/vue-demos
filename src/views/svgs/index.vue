@@ -6,9 +6,10 @@
 
 <script>
 import AchimedeanSpiral from "@/views/svgs/AchimedeanSpiral";
+
 export default {
   name: "Svgs",
-  components: {AchimedeanSpiral}
+  components: { AchimedeanSpiral}
 }
 </script>
 
