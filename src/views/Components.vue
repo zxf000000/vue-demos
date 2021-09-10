@@ -34,6 +34,15 @@
         <b-tab title="Fade">
           <FadeAnimation></FadeAnimation>
         </b-tab>
+        <b-tab title="SVGLignt">
+          <SvgLight></SvgLight>
+        </b-tab>
+        <b-tab title="SVGLine">
+          <SVgLine></SVgLine>
+        </b-tab>
+        <b-tab title="SpotLight">
+          <SpotLight></SpotLight>
+        </b-tab>
       </b-tabs>
     </div>
   </div>
@@ -48,10 +57,15 @@ import AnimationCard from "@/views/componenets/AnimationCard";
 import Museum from "@/components/Museum/Museum";
 import FadeAnimation from "@/components/fade-animation";
 import MuseumVertical from "@/components/MuseumVertical/MuseumVertical";
+import SvgLight from "./componenets/SvgLight";
+import SVgLine from "@/views/componenets/SVgLine";
+import SpotLight from "@/views/componenets/SpotLight";
 
 export default {
   name: "Components",
-  components: {MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
+  components: {
+    SpotLight,
+    SVgLine, SvgLight, MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {
     tapStart() {
       this.$refs.loading.startAnimation();

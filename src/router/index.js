@@ -108,6 +108,26 @@ const routes = [
   {
     path: '/svgs',
     component: () => import('../views/svgs/index.vue')
+  },
+  {
+    path: '/scroll',
+    component: () => import('../views/scroll/index.vue')
+  },
+  {
+    path: '/router-transition',
+    component: () => import('../views/router-transition/index.vue'),
+    redirect: '/router-transition/list',
+    children: [
+      {
+        path: 'list',
+        component: () => import('../views/router-transition/list-page.vue'),
+      },
+      {
+        path: 'detail/:index',
+        component: () => import('../views/router-transition/detail-page.vue'),
+        props: true,
+      }
+    ]
   }
 ]
 
