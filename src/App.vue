@@ -6,6 +6,9 @@
         <b-nav-item to="/components">Components</b-nav-item>
         <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
         <b-nav-item to="/scrollspy">ScrollSpy</b-nav-item>
+        <b-nav-item to="/svgs">svg</b-nav-item>
+        <b-nav-item to="/scroll">scroll</b-nav-item>
+        <b-nav-item to="/router-transition">RouterTransition</b-nav-item>
       </b-nav>
     <router-view class="router-view"/>
   </div>
