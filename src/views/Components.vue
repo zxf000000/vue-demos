@@ -34,6 +34,9 @@
         <b-tab title="Fade">
           <FadeAnimation></FadeAnimation>
         </b-tab>
+        <b-tab title="ClipPathShadow">
+          <ClipPathShadow></ClipPathShadow>
+        </b-tab>
       </b-tabs>
     </div>
   </div>
@@ -48,10 +51,11 @@ import AnimationCard from "@/views/componenets/AnimationCard";
 import Museum from "@/components/Museum/Museum";
 import FadeAnimation from "@/components/fade-animation";
 import MuseumVertical from "@/components/MuseumVertical/MuseumVertical";
+import ClipPathShadow from "@/views/componenets/ClipPathShadow";
 
 export default {
   name: "Components",
-  components: {MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
+  components: {ClipPathShadow, MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {
     tapStart() {
       this.$refs.loading.startAnimation();
