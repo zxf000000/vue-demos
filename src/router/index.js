@@ -60,6 +60,16 @@ const routes = [
         name: 'shader',
         component: () => import('../views/GLDemo/GLViews/shader.vue'),
       },
+      {
+        path: 'three_1',
+        name: 'three_1',
+        component: () => import('../views/GLDemo/GLViews/Three_1.vue')
+      },
+      {
+        path: 'three_2',
+        name: 'three_2',
+        component: () => import('../views/GLDemo/GLViews/three_2.vue')
+      }
     ],
   },
   {
