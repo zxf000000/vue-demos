@@ -1,79 +1,114 @@
 <template>
-  <div id="app">
-      <b-nav pills v-model="currentIndex">
-        <b-nav-item to="/">Home</b-nav-item>
-        <b-nav-item to="/test-page">Test</b-nav-item>
-        <b-nav-item to="/components">Components</b-nav-item>
-        <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
-        <b-nav-item to="/scrollspy">ScrollSpy</b-nav-item>
-        <b-nav-item to="/svgs">svg</b-nav-item>
-        <b-nav-item to="/scroll">scroll</b-nav-item>
-        <b-nav-item to="/router-transition">RouterTransition</b-nav-item>
-      </b-nav>
-    <router-view class="router-view"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 
-// import Web3 from 'web3';
-
 export default {
-  data() {
-    return {
-      currentIndex: 0,
-    };
-  },
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
   mounted() {
-    // let web3 = new Web3(Web3.givenProvider);
-    // let arr = [];
-    // // eslint-disable-next-line no-unused-vars
-    // for (let i = 0; i < 2000; i++) {
-    //   const account = web3.eth.accounts.create();
-    //   arr.push(account);
-    // }
-    // console.log(JSON.stringify(arr));
-  }
-}
-</script>
 
-<style lang="scss">
 
-html {
-  height: 100vh;
-  width: 100vw;
-}
+    const man = [];
+    const head = ['  ', ' O', '  '];
+    const body = [' ⋋', ' |', '⋌ '];
+    const foot = [' ∕', '  ', '∖ '];
+    man.push(head);
+    man.push(body);
+    man.push(foot);
 
-body {
-  padding: 0;
-  margin: 0;
-}
+    console.log(man);
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  height: 100%;
-}
-#nav {
-  padding: 30px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: cornflowerblue;
-  a {
-    font-weight: bold;
-    color: #ffffff;
+    const manPosition = [5, 5];
 
-    &.router-link-exact-active {
-      color: #42b983;
+    let text = '';
+    for (let i = 0; i < 30; i += 1 ) {
+      text += '\n'
+      for (let j = 0; j < 30; j += 1) {
+        const position = [manPosition[1] * 3 , manPosition[0] * 3];
+        if (i === position[0] - 1) {
+          if (j === position[1] - 1) {
+            text += man[0][0];
+          } else if (j === position[1]) {
+            text += man[0][1];
+          } else if (j === position[1] + 1) {
+            text += man[0][2];
+          } else {
+            text += '* ';
+          }
+        } else if (i === position[0]) {
+          if (j === position[1] - 1) {
+            text += man[1][0];
+          } else if (j === position[1]) {
+            text += man[1][1];
+          } else if (j === position[1] + 1) {
+            text += man[1][2];
+          } else {
+            text += '* ';
+          }
+        } else if (i === position[0] + 1) {
+          if (j === position[1] - 1) {
+            text += man[2][0];
+          } else if (j === position[1]) {
+            text += man[2][1];
+          } else if (j === position[1] + 1) {
+            text += man[2][2];
+          } else {
+            text += '* ';
+          }
+        } else {
+          text += '* '
+        }
+      }
     }
+    console.log(text);
+
+
+
   }
-}
-</style>
+};
+</script>

@@ -1,6 +1,6 @@
 <template>
   <div class="components-container">
-    <div>
+    <div style="perspective-origin: center; perspective: 2000px;">
       <b-tabs content-class="mt-3">
         <b-tab title="MuseumVertical">
           <MuseumVertical></MuseumVertical>
@@ -43,6 +43,9 @@
         <b-tab title="SpotLight">
           <SpotLight></SpotLight>
         </b-tab>
+        <b-tab title="CardCombine">
+          <CardCombine></CardCombine>
+        </b-tab>
       </b-tabs>
     </div>
   </div>
@@ -60,10 +63,12 @@ import MuseumVertical from "@/components/MuseumVertical/MuseumVertical";
 import SvgLight from "./componenets/SvgLight";
 import SVgLine from "@/views/componenets/SVgLine";
 import SpotLight from "@/views/componenets/SpotLight";
+import CardCombine from "@/components/CardCombine";
 
 export default {
   name: "Components",
   components: {
+    CardCombine,
     SpotLight,
     SVgLine, SvgLight, MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {

@@ -33,11 +33,12 @@ export default {
       pcBuffer.scale.set(5, 10, 10);
       pcBuffer.position.set(-5, 0, 0);
       this.scene.add(pcBuffer);
+
       this.renderer.render(this.scene, this.camera);
     },
     generatePointcloud(color, width, length) {
       const geometry = this.generatePointcloudGeometry(color, width, length);
-      const material = new THREE.PointsMaterial({size: 0.35, vertexColors: true});
+      const material = new THREE.PointsMaterial({size: 0.15, vertexColors: true});
       return new THREE.Points(geometry, material);
     },
     generatePointcloudGeometry(color, width, length) {
