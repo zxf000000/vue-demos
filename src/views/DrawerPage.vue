@@ -1,9 +1,10 @@
 <template>
     <div class="drawer-container">
-      <transition name="up">
-        <div v-if="show" class="inner" ref="inner">
-        </div>
-      </transition>
+      open drawer
+<!--      <transition name="up">-->
+<!--        <div v-if="show" class="inner" ref="inner">-->
+<!--        </div>-->
+<!--      </transition>-->
     </div>
 </template>
 
@@ -16,20 +17,25 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.show = true;
-    })
+    // this.$nextTick(() => {
+    //   this.show = true;
+    // })
   },
-  beforeRouteLeave(from, to, next) {
-    this.show = false;
-    this.$nextTick(next);
-  },
+  // beforeRouteLeave(from, to, next) {
+  //   this.show = false;
+  //   this.$nextTick(next);
+  // },
 }
 </script>
 
 <style scoped lang="scss">
 .drawer-container {
-
+  background: blueviolet;
+  width: 500px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .inner {
   background-color: green;

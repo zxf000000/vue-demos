@@ -11,18 +11,23 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    children: [
-      {
-        path: 'drawerPage',
-        name: 'DrawerPage',
-        component: DrawerPage,
-      }
-    ]
   },
   {
     path: '/scrollspy',
     name: 'scrollspy',
     component: () => import('../views/scrollspy-demo/index.vue')
+  },
+  {
+    path: '/drawer-view',
+    name: 'DrawerView',
+    component: () => import('../views/drawer-view.vue'),
+    children: [
+      {
+        path: 'drawer',
+        name: 'Drawer',
+        component: DrawerPage,
+      }
+    ]
   },
   {
     path: '/gl_demo',
@@ -136,6 +141,20 @@ const routes = [
         path: 'detail/:index',
         component: () => import('../views/router-transition/detail-page.vue'),
         props: true,
+      }
+    ]
+  },
+  {
+    path: '/gsap',
+    component: () => import('../views/gsap/index.vue'),
+    children: [
+      {
+        path: 'scroll-trigger',
+        component: () => import('../views/gsap/scroll-trigger.vue'),
+      },
+      {
+        path: 'flip',
+        component: () => import('../views/gsap/flip.vue'),
       }
     ]
   }
