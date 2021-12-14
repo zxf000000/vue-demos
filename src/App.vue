@@ -1,79 +1,104 @@
 <template>
-  <div id="app">
-      <b-nav pills v-model="currentIndex">
-        <b-nav-item to="/">Home</b-nav-item>
-        <b-nav-item to="/test-page">Test</b-nav-item>
-        <b-nav-item to="/components">Components</b-nav-item>
-        <b-nav-item to="/gl_demo">GLDemo</b-nav-item>
-        <b-nav-item to="/scrollspy">ScrollSpy</b-nav-item>
-        <b-nav-item to="/svgs">svg</b-nav-item>
-        <b-nav-item to="/scroll">scroll</b-nav-item>
-        <b-nav-item to="/router-transition">RouterTransition</b-nav-item>
-      </b-nav>
-    <router-view class="router-view"/>
-  </div>
+  <v-app>
+<!--    <v-app-bar-->
+<!--      app-->
+<!--      color="primary"-->
+<!--      dark-->
+<!--    >-->
+<!--      <div class="d-flex align-center">-->
+<!--        <v-img-->
+<!--          alt="Vuetify Logo"-->
+<!--          class="shrink mr-2"-->
+<!--          contain-->
+<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
+<!--          transition="scale-transition"-->
+<!--          width="40"-->
+<!--        />-->
+<!--        <v-img-->
+<!--          alt="Vuetify Name"-->
+<!--          class="shrink mt-1 hidden-sm-and-down"-->
+<!--          contain-->
+<!--          min-width="100"-->
+<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"-->
+<!--          width="100"-->
+<!--        />-->
+<!--      </div>-->
+
+<!--      <v-spacer></v-spacer>-->
+
+<!--      <v-btn-->
+<!--        href="https://github.com/vuetifyjs/vuetify/releases/latest"-->
+<!--        target="_blank"-->
+<!--        text-->
+<!--      >-->
+<!--        <span class="mr-2">Latest Release</span>-->
+<!--        <v-icon>mdi-open-in-new</v-icon>-->
+<!--      </v-btn>-->
+<!--    </v-app-bar>-->
+    <v-card>
+      <v-navigation-drawer app>
+        <v-list
+            nav
+            dense
+        >
+          <v-list-group
+              :value="false"
+          >
+            <template v-slot:activator>
+              <v-list-item-title>GSAP</v-list-item-title>
+            </template>
+            <v-list-item to="/gsap/scroll-trigger">
+              <v-list-item-content>SCROLL TRIGGER (PARALLAX)</v-list-item-content>
+            </v-list-item>
+            <v-list-item to="/gsap/flip">
+              <v-list-item-content>FLIP</v-list-item-content>
+            </v-list-item>
+          </v-list-group>
+          <v-list-item link to="/drawer-view">
+            <v-list-item-title>DRAWER PAGE</v-list-item-title>
+          </v-list-item>
+          <v-list-item link to="/scrollspy">
+            <v-list-item-title>SCROLL SPY</v-list-item-title>
+          </v-list-item>
+          <v-list-item link to="/gl_demo">
+            <v-list-item-title>GL DEMO</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/router-transition">
+            <v-list-item-title>ROUTER TRANSITION</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/scroll">
+            <v-list-item-title>SCROLL</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/svgs">
+            <v-list-item-title>SVGS</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/components">
+            <v-list-item-title>COMPONENTS</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/test-page">
+            <v-list-item-title>TEST PAGE</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/about">
+            <v-list-item-title>ABOUT</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+    </v-card>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 
-// import Web3 from 'web3';
-
 export default {
-  data() {
-    return {
-      currentIndex: 0,
-    };
-  },
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
   mounted() {
-    // let web3 = new Web3(Web3.givenProvider);
-    // let arr = [];
-    // // eslint-disable-next-line no-unused-vars
-    // for (let i = 0; i < 2000; i++) {
-    //   const account = web3.eth.accounts.create();
-    //   arr.push(account);
-    // }
-    // console.log(JSON.stringify(arr));
   }
-}
+};
 </script>
-
-<style lang="scss">
-
-html {
-  height: 100vh;
-  width: 100vw;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  height: 100%;
-}
-#nav {
-  padding: 30px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: cornflowerblue;
-  a {
-    font-weight: bold;
-    color: #ffffff;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>

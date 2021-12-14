@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="500" width="500">
+    <rect width="500" height="500" x="0" y="0" style="fill:white;"/>
+    <circle cx="250" cy="100" r="50" stroke="lightgray" stroke-width="10" fill="none">
+    </circle>
+    <line x1="250" y1="150" x2="250" y2="300" stroke-width="10" stroke="lightgray"></line>
+    <polyline points="100,300 180, 200 320, 200 400, 300" fill="none" stroke="lightgray" stroke-width="10"></polyline>
+    <polyline points="130,450 200,300 300, 300 370, 450" fill="none" stroke="lightgray" stroke-width="10"></polyline>
+    <text y="185" style="fill:black;font-family: courier;font-size:10px;" xml:space="preserve">
+        <tspan x="25" dy="10">                         </tspan>
+        <tspan x="25" dy="10">            %</tspan>
+        <tspan x="25" dy="10">           ***           </tspan>
+        <tspan x="25" dy="10">           &amp;**           </tspan>
+        <tspan
+                x="25" dy="10">           &amp;&amp;*           </tspan>
+        <tspan x="25" dy="10">           &amp;&amp;*           </tspan>
+        <tspan
+                x="25" dy="10">           &amp;&amp;*           </tspan>
+        <tspan x="25" dy="10">           &amp;&amp;&amp;           </tspan>
+        <tspan
+                x="25" dy="10">           **%           </tspan>
+        <tspan x="25" dy="10">        &amp;*&amp;*&amp;%&amp;*%        </tspan>
+        <tspan
+                x="25" dy="10">           %%%           </tspan>
+        <tspan x="25" dy="10">           &amp;%%           </tspan>
+        <tspan
+                x="25" dy="10">                         </tspan>
+    </text>
+    <text y="185" style="fill:black;font-family: courier; font-size:10px;" xml:space="preserve">
+        <tspan x="325" dy="10">                         </tspan>
+        <tspan x="325" dy="10">            %</tspan>
+        <tspan x="325" dy="10">           ***           </tspan>
+        <tspan x="325" dy="10">           &amp;**           </tspan>
+        <tspan
+                x="325" dy="10">           &amp;&amp;*           </tspan>
+        <tspan x="325" dy="10">           &amp;&amp;*           </tspan>
+        <tspan
+                x="325" dy="10">           &amp;&amp;*           </tspan>
+        <tspan x="325" dy="10">           &amp;&amp;&amp;           </tspan>
+        <tspan
+                x="325" dy="10">           **%           </tspan>
+        <tspan x="325" dy="10">        &amp;*&amp;*&amp;%&amp;*%        </tspan>
+        <tspan
+                x="325" dy="10">           %%%           </tspan>
+        <tspan x="325" dy="10">           &amp;%%           </tspan>
+        <tspan
+                x="325" dy="10">                         </tspan>
+    </text>
+</svg>

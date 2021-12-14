@@ -1,6 +1,6 @@
 <template>
   <div class="components-container">
-    <div>
+    <div style="perspective-origin: center; perspective: 2000px;">
       <b-tabs content-class="mt-3">
         <b-tab title="MuseumVertical">
           <MuseumVertical></MuseumVertical>
@@ -43,8 +43,8 @@
         <b-tab title="SpotLight">
           <SpotLight></SpotLight>
         </b-tab>
-        <b-tab title="ClipPathShadow">
-          <ClipPathShadow></ClipPathShadow>
+        <b-tab title="CardCombine">
+          <CardCombine></CardCombine>
         </b-tab>
       </b-tabs>
     </div>
@@ -60,16 +60,16 @@ import AnimationCard from "@/views/componenets/AnimationCard";
 import Museum from "@/components/Museum/Museum";
 import FadeAnimation from "@/components/fade-animation";
 import MuseumVertical from "@/components/MuseumVertical/MuseumVertical";
-import ClipPathShadow from "@/views/componenets/ClipPathShadow";
 import SvgLight from "./componenets/SvgLight";
 import SVgLine from "@/views/componenets/SVgLine";
 import SpotLight from "@/views/componenets/SpotLight";
+import CardCombine from "@/components/CardCombine";
 
 export default {
   name: "Components",
   components: {
+    CardCombine,
     SpotLight,
-    ClipPathShadow,
     SVgLine, SvgLight, MuseumVertical, FadeAnimation, Museum, AnimationCard, MaskDemo, CircleLoading, Hamburg},
   methods: {
     tapStart() {

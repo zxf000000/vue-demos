@@ -1,15 +1,19 @@
 <template>
   <div>
-    Home
+    Drawer Test
+    <v-btn to="/drawer-view/drawer" class="mt-10 ml-10">
+      OPEN DRAWER
+    </v-btn>
+    <transition name="router-drawer">
+      <router-view class="router-view"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Home',
-    components: {
-    },
-  }
+export default {
+  name: "drawer-view"
+}
 </script>
 
 <style scoped lang="scss">
@@ -25,5 +29,4 @@
 .router-drawer-enter-to, .router-drawer-leave {
   margin-top: 100px !important;
 }
-
 </style>
