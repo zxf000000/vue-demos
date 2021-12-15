@@ -8,89 +8,86 @@
 </template>
 
 <script>
+import Brush from "@/views/canvas/brush/brush";
+
+let mouseX = 0;
+let mouseY = 0;
+
 export default {
   name: "draw-papers",
   data() {
     return {
       context: null,
-      isDown: false,
-      pathPoints: [],
+      brush: null,
+      touched: false,
     };
   },
   methods: {
     initContext() {
       const canvas = this.$refs.canvas;
-      if (canvas.getContext) {
-        this.context = canvas.getContext('2d');
-        const width = canvas.clientWidth;
-        const height = canvas.clientHeight;
-        canvas.width = width;
-        canvas.height = height;
-        // 处理高分辨率问题
-        const dpr = window.devicePixelRatio
-            || window.webkitDevicePixelRatio
-            || window.mozDevicePixelRatio
-            || 1;
-        const oldWidth = canvas.width;
-        const oldHeight = canvas.height;
-        canvas.width = Math.round(oldWidth * dpr);
-        canvas.height = Math.round(oldHeight * dpr);
-        this.context.scale(dpr, dpr);
-        console.log(canvas.width, canvas.height);
-        // 设置背景颜色
-        this.context.fillStyle = '#000000';
-        this.context.fillRect(0, 0, width, height);
-      }
+      this.brush = new Brush(canvas.clientWidth / 2, canvas.clientHeight/2, '#000000');
+      this.context = canvas.getContext('2d');
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      window.addEventListener('resize', this.resize, false);
     },
     bindEvent() {
       this.$refs.canvas.addEventListener('mousedown', this.mouseDown);
       this.$refs.canvas.addEventListener('mousemove', this.mouseMove);
       this.$refs.canvas.addEventListener('mouseup', this.mouseUp);
+      this.$refs.canvas.addEventListener('mouseout', this.mouseUp);
+
+      this.$refs.canvas.addEventListener('touchmove', this.touchMove, false);
+      this.$refs.canvas.addEventListener('touchstart', this.touchStart, false);
+      this.$refs.canvas.addEventListener('touchcancel', this.touchEnd, false);
+      this.$refs.canvas.addEventListener('touchend', this.touchEnd, false);
+
     },
-    mouseDown(event) {
-      this.isDown = true;
-      this.pathPoints.push([]);
-      console.log(event);
+    mouseDown(e) {
+      mouseX = e.layerX;
+      mouseY = e.layerY;
+      this.brush.startStroke(mouseX, mouseY);
     },
-    mouseMove(event) {
-      if (this.isDown) {
-        console.log(event);
-        this.pathPoints[this.pathPoints.length - 1].push({
-          x: event.layerX,
-          y: event.layerY,
-        });
-      }
+    mouseMove(e) {
+      console.log(e.layerX, e.layerY);
+      mouseX = e.layerX;
+      mouseY = e.layerY;
     },
-    mouseUp(event) {
-      this.isDown = false;
-      console.log(event);
+    mouseUp() {
+      this.brush.endStroke();
+    },
+    touchMove(e) {
+      const t = e.touches[0];
+      mouseX = t.clientX;
+      mouseY = t.clientY;
+    },
+    touchStart(e) {
+      if (this.touched) return;
+      this.touched = true;
+
+      const t = e.touches[0];
+      mouseX = t.clientX;
+      mouseY = t.clientY;
+      this.brush.startStroke(mouseX, mouseY);
+    },
+    touchEnd() {
+      this.touched = false;
+      this.brush.endStroke();
+    },
+    resize() {
+      // centerX = this.$refs.canvas.width * 0.5;
+      // centerY = this.$refs.canvas.height * 0.5;
+      this.context = this.$refs.canvas.getContext('2d');
     },
     rAF() {
       // 计算
-      this.context.strokeStyle = '#FFFFFF';
-      this.context.beginPath();
-      console.log(this.pathPoints);
-      for (let i = 0; i < this.pathPoints.length; i += 1) {
-        const arr = this.pathPoints[i];
-        for (let j = 0; j < arr.length; j += 1) {
-          const point = arr[j];
-          if (j === 0) {
-            this.context.moveTo(point.x, point.y);
-          } else {
-            this.context.lineTo(point.x, point.y);
-          }
-        }
-      }
-      this.context.stroke();
+      this.brush.render(this.context, mouseX, mouseY);
       requestAnimationFrame(this.rAF);
     },
     tapClear() {
       this.context.clearRect(0,0, this.$refs.canvas.width, this.$refs.canvas.height);
       // 设置背景颜色
-      this.context.fillStyle = '#000000';
-      this.context.fillRect(0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
-      this.pathPoints = [];
-    }
+    },
   },
   mounted() {
     this.$nextTick(() => {

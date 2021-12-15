@@ -165,7 +165,7 @@ const routes = [
       {
         path: 'draw-paper',
         component: () => import('../views/canvas/draw-papers.vue'),
-      }
+      },
     ]
   }
 ]

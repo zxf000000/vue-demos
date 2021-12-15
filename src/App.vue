@@ -51,6 +51,10 @@
               <v-list-item-icon></v-list-item-icon>
               <v-list-item-title>Draw Paper</v-list-item-title>
             </v-list-item>
+            <v-list-item to="/canvas/paperjs">
+              <v-list-item-icon></v-list-item-icon>
+              <v-list-item-title>Paper js</v-list-item-title>
+            </v-list-item>
           </v-list-group>
           <v-list-group
               :value="false"
