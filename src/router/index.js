@@ -157,6 +157,16 @@ const routes = [
         component: () => import('../views/gsap/flip.vue'),
       }
     ]
+  },
+  {
+    path: '/canvas',
+    component: () => import('../views/canvas/index.vue'),
+    children: [
+      {
+        path: 'draw-paper',
+        component: () => import('../views/canvas/draw-papers.vue'),
+      }
+    ]
   }
 ]
 

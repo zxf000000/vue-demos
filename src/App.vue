@@ -45,12 +45,25 @@
               :value="false"
           >
             <template v-slot:activator>
+              <v-list-item-title>Some Canvas</v-list-item-title>
+            </template>
+            <v-list-item to="/canvas/draw-paper">
+              <v-list-item-icon></v-list-item-icon>
+              <v-list-item-title>Draw Paper</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
+          <v-list-group
+              :value="false"
+          >
+            <template v-slot:activator>
               <v-list-item-title>GSAP</v-list-item-title>
             </template>
             <v-list-item to="/gsap/scroll-trigger">
-              <v-list-item-content>SCROLL TRIGGER (PARALLAX)</v-list-item-content>
+              <v-list-item-icon></v-list-item-icon>
+              <v-list-item-title>SCROLL TRIGGER (PARALLAX)</v-list-item-title>
             </v-list-item>
             <v-list-item to="/gsap/flip">
+              <v-list-item-icon></v-list-item-icon>
               <v-list-item-content>FLIP</v-list-item-content>
             </v-list-item>
           </v-list-group>
