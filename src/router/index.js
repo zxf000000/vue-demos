@@ -166,6 +166,10 @@ const routes = [
         path: 'draw-paper',
         component: () => import('../views/canvas/draw-papers.vue'),
       },
+      {
+        path: 'rotate-image',
+        component: () => import('../views/canvas/rotate-image.vue'),
+      }
     ]
   }
 ]
