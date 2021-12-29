@@ -55,6 +55,10 @@
               <v-list-item-icon></v-list-item-icon>
               <v-list-item-title>Paper js</v-list-item-title>
             </v-list-item>
+            <v-list-item to="/canvas/rotate-image">
+              <v-list-item-icon></v-list-item-icon>
+              <v-list-item-title>Rotate Image</v-list-item-title>
+            </v-list-item>
           </v-list-group>
           <v-list-group
               :value="false"
