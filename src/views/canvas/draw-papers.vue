@@ -49,7 +49,6 @@ export default {
       this.brush.startStroke(mouseX, mouseY);
     },
     mouseMove(e) {
-      console.log(e.layerX, e.layerY);
       mouseX = e.layerX;
       mouseY = e.layerY;
     },
