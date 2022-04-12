@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex flex-column align-start">
     Origin Image
-    <img ref="originImage" :src="testImg" @load="canTap = true" />
+    <img ref="originImage" :src="testImg" @load="tapRotate" />
     <v-btn @click="tapRotate" :disabled="!canTap">
       Rotate
     </v-btn>
@@ -26,16 +26,15 @@ export default {
   methods: {
     tapRotate() {
       const origin = this.$refs.originImage;
-      console.log(origin);
       const canvas = document.createElement('canvas');
-      canvas.width = origin.height;
-      canvas.height = origin.width;
       const context = canvas.getContext('2d');
       context.fillStyle = '#000';
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      context.translate(canvas.width/2, canvas.height/2);
-      context.rotate(Math.PI / 2 * 3);
-      context.translate(-canvas.height / 2, -canvas.width / 2)
+      canvas.width= origin.height;
+      canvas.height = origin.width;
+      const angle = Math.PI / 4
+      context.translate(canvas.width / 2, canvas.height / 2);
+      context.rotate(angle);
+      context.translate(-canvas.height/2, -canvas.width/2)
       context.drawImage(origin, 0, 0);
       this.resImage = canvas.toDataURL('image/png');
       console.log(this.resImage);
