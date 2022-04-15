@@ -99,6 +99,9 @@
           <v-list-item to="/test-page">
             <v-list-item-title>TEST PAGE</v-list-item-title>
           </v-list-item>
+          <v-list-item to="/directive">
+            <v-list-item-title>DIRECTIVE</v-list-item-title>
+          </v-list-item>
           <v-list-item to="/about">
             <v-list-item-title>ABOUT</v-list-item-title>
           </v-list-item>
@@ -118,6 +121,7 @@ export default {
 
   data: () => ({
     //
+    testDirective: 'test directive',
   }),
   mounted() {
   }

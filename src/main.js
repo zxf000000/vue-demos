@@ -21,6 +21,17 @@ Vue.use(IconsPlugin)
 Vue.use(SharedElementDirective);
 router.beforeEach(SharedElementRouteGuard)
 
+// 自定义指令
+Vue.directive('test1', {
+  inserted(el, binding,node) {
+    console.log(el, binding, node);
+    el.innerHTML = `<p>value: ${binding.value}</p></br>
+        <p>modifiers: ${JSON.stringify(binding.modifiers)}</p></br>
+        <p>arg: ${binding.arg}</p>
+`
+  }
+});
+
 new Vue({
   router,
   vuetify,

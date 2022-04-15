@@ -171,6 +171,10 @@ const routes = [
         component: () => import('../views/canvas/rotate-image.vue'),
       }
     ]
+  },
+  {
+    path: '/directive',
+    component: () => import('../views/custom-directive/index.vue'),
   }
 ]
 

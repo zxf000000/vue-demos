@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 488 747">
+    <defs>
+        <style>
+            .cls-1,.cls-11,.cls-16{fill:none;}.cls-2{isolation:isolate;}.cls-3{clip-path:url(#clip-path);}.cls-4{clip-path:url(#clip-path-2);}.cls-10,.cls-12,.cls-13,.cls-14,.cls-15,.cls-17,.cls-20,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{fill:#fff;}.cls-5{opacity:0.11;}.cls-6{font-size:10.45px;}.cls-10,.cls-6{font-family:Poppins-Regular,
+            Poppins;}.cls-7{font-size:16.89px;}.cls-20,.cls-7{font-family:Poppins-Medium,
+            Poppins;font-weight:500;}.cls-9{opacity:0.1;}.cls-10,.cls-14,.cls-15,.cls-20{font-size:18px;}.cls-11,.cls-16{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}.cls-11{mix-blend-mode:overlay;}.cls-12{fill-rule:evenodd;}.cls-13{font-size:30.1px;font-family:Poppins-Bold,
+            Poppins;font-weight:700;}.cls-14,.cls-17{font-family:Poppins-Light,
+            Poppins;font-weight:300;}.cls-15,.cls-18{font-family:AdobeSongStd-Light-GBpc-EUC-H, Adobe Song
+            Std;}.cls-17{font-size:14px;}.cls-18{font-weight:400;}.cls-19{fill:url(#gradient1);}
+            svg {perspective: 1000px;}
+            #item1 {transform-origin: 50%; transform-style: preserve-3d;}
+            #item1 { animation: item1 3s infinite linear; }
+            @keyframes item1 { 0% { transform: rotateY(0); } 50% { transform: rotateY(180deg); } 0% { transform: rotateY(360deg);}}
+        </style>
+        <clipPath id="clip-path">
+            <path class="cls-1"
+                  d="M426.44,746.64H61.72a62,62,0,0,1-62-62v-625A59.68,59.68,0,0,1,59.37-.12H426.44a62,62,0,0,1,62,62v622.7A62,62,0,0,1,426.44,746.64Z"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <rect class="cls-1" x="-5.31" y="-5.12" width="498.78" height="756.77"/>
+        </clipPath>
+        <linearGradient id="gradient1" x1="463" y1="378.71" x2="463" y2="690" gradientUnits="userSpaceOnUse">
+            <stop offset="-1" stop-color="gold" stop-opacity="0.1">
+                <animate attributeName="offset" dur="3s" repeatCount="indefinite"
+                         values="-1; 0; 1"
+                >
+                </animate>
+            </stop>
+            <stop offset="-0.56" stop-color="gold" stop-opacity="0.1">
+                <animate attributeName="offset" dur="3s" repeatCount="indefinite"
+                         values="-0.56; 0.44; 1.44"
+                >
+                </animate>
+            </stop>
+            <stop offset="-0.43" stop-color="gold" stop-opacity="0.5">
+                <animate attributeName="offset" dur="3s" repeatCount="indefinite"
+                         values="-0.43; 0.57; 1.57"
+                >
+                </animate>
+            </stop>
+            <stop offset="-0.28" stop-color="gold" stop-opacity="0.1">
+                <animate attributeName="offset" dur="3s" repeatCount="indefinite"
+                         values="-0.28; 0.72; 1.72"
+                >
+                </animate>
+            </stop>
+            <stop offset="0" stop-color="gold" stop-opacity="0.1">
+                <animate attributeName="offset" dur="3s" repeatCount="indefinite"
+                         values="0; 1; 2"
+                >
+                </animate>
+            </stop>
+        </linearGradient>
+        <radialGradient id="bg" cx="15%" cy="15%">
+            <stop offset="30%" stop-color="green"/>
+            <stop offset="70%" stop-color="black"/>
+        </radialGradient>
+        <path id="tPath1" d="M 247 284 A 146 146, 0, 1, 1, 247 576 A 146 146, 0, 1, 1, 247 284">
+        </path>
+        <path id="tPath2"
+              d="M 18 376 L 18 692 A 42 42, 0, 0, 0, 60 728 L 206 728"
+              stroke-width="2"
+              stroke="#000"
+              fill="none"
+        >
+        </path>
+        <path id="tPath3"
+              fill="none"
+              d="M 72 143 L 418 143 A 20 20 0, 0, 1, 438 165 L 438 215 A 20 20, 0, 0, 1, 418 235 L 72 235
+                  A 20 20, 0, 0, 1, 51 215 L 51 165 A 20 20, 0, 0, 1, 72 143"
+        >
+        </path>
+    </defs>
+    <rect rx="50" x="0" y="0" width="100%" height="100%" fill="url(#bg)">
+    </rect>
+    <g class="cls-2">
+        <g>
+            <rect class="cls-5" x="329.74" y="662.23" width="99.06" height="28.23" rx="5.8"/>
+            <text class="cls-7" transform="translate(351.68 649.07)">Time Left</text>
+            <text class="cls-7" transform="translate(341.66 682.41)">312 Days</text>
+            <rect class="cls-5" x="58.88" y="662.23" width="99.06" height="28.23" rx="5.8"/>
+            <text class="cls-7" transform="translate(58.88 649.07)">Total NFTs</text>
+            <text class="cls-7" transform="translate(70.8 682.41)">6</text>
+            <path class="cls-80"
+                  fill="gold"
+                  d="M432.74,394.13h66.83a0,0,0,0,1,0,0v32.08a0,0,0,0,1,0,0H432.74a6.42,6.42,0,0,1-6.42-6.42V400.54A6.42,6.42,0,0,1,432.74,394.13Z"
+                  transform="translate(873.11 -52.78) rotate(90)"/>
+            <path class="cls-8"
+                  d="M127.59,41.26h-4A26.62,26.62,0,0,0,97.37,63.77L97.18,65h10.29l.19-.87a16.41,16.41,0,0,1,16-12.76h4a16.41,16.41,0,0,1,15.95,12.76l.19.87H154l-.19-1.27A26.62,26.62,0,0,0,127.59,41.26Z"/>
+            <polygon class="cls-8"
+                     points="239.86 41.58 215.44 92.27 226.17 92.27 241.75 59.97 245.27 52.75 239.86 41.58"/>
+            <polygon class="cls-8" points="243.16 70.04 253.51 92.27 264.22 92.27 253.84 70.04 243.16 70.04"/>
+            <path class="cls-8"
+                  d="M48.37,50.5a24.51,24.51,0,0,0,0,34.92A24.77,24.77,0,0,0,66,92.63H84V83H66a15,15,0,1,1,0-30H84V43.29H66A24.77,24.77,0,0,0,48.37,50.5Z"/>
+            <rect class="cls-8" x="167.82" y="82.97" width="34.37" height="9.66"/>
+            <rect class="cls-8" x="167.82" y="43.29" width="9.73" height="34.96"/>
+            <path class="cls-8"
+                  d="M143.54,71.12a16.4,16.4,0,0,1-15.95,12.76h-4a16.4,16.4,0,0,1-16-12.76l-.19-.87H97.18l.19,1.27A26.62,26.62,0,0,0,123.61,94h4a26.62,26.62,0,0,0,26.24-22.52l.19-1.27H143.73Z"/>
+            <path class="cls-8"
+                  d="M311.2,67.94l.41-.5A14.72,14.72,0,0,0,300.22,43.3H277.47v9.6h22.75a5.13,5.13,0,1,1,0,10.26H277.47V92.63h22.75A14.83,14.83,0,0,0,315,77.8a14.41,14.41,0,0,0-3.41-9.37ZM300.22,83H285.77V72.76h14.45a5.15,5.15,0,0,1,5.19,5.1A5.25,5.25,0,0,1,300.22,83Z"/>
+            <rect class="cls-9" x="69.08" y="193.53" width="350" height="28" rx="7.31"/>
+            <text class="cls-7" transform="translate(70.95 176.52)">Vault :</text>
+            <text class="cls-10" transform="translate(79.7 213.37)">ABC #10000001</text>
+            <rect class="cls-11" x="53.79" y="146.38" width="380.58" height="86.04" rx="18.57"/>
+            <g id="item1">
+                <path class="cls-12"
+                      d="M348.83,453.42s-7.8-53.79-9-60.39c-4.5-24.6-18-41.21-40.54-42.38v-.12H195.69v.12c-22.57,1.17-36,13.3-40.53,42.38-1,6.64-9,60.39-9,60.39l.11,0c0,.73-.11,1.45-.11,2.2a29.3,29.3,0,0,0,53.94,15.62l.11,0,16.44-27a9,9,0,0,1,7.69-4.32h46.32a9,9,0,0,1,7.69,4.32l16.44,27,.11,0a29.3,29.3,0,0,0,53.94-15.62c0-.75-.06-1.47-.11-2.2Zm-59-84.05a9.42,9.42,0,1,1-9.42,9.42A9.41,9.41,0,0,1,289.87,369.37ZM219.24,407h-4.71v4.71a9.42,9.42,0,1,1-18.84,0V407H191a9.42,9.42,0,0,1,0-18.84h4.71v-4.7a9.42,9.42,0,1,1,18.84,0v4.7h4.71a9.42,9.42,0,0,1,0,18.84ZM271,407a9.42,9.42,0,1,1,9.42-9.42A9.42,9.42,0,0,1,271,407Zm18.84,18.83a9.42,9.42,0,1,1,9.41-9.41A9.41,9.41,0,0,1,289.87,425.87ZM308.7,407a9.42,9.42,0,1,1,9.42-9.42A9.42,9.42,0,0,1,308.7,407Z"/>
+                <path class="cls-12"
+                      d="M221.59,327.42H198.05a5.89,5.89,0,1,0,0,11.77h23.54a5.89,5.89,0,1,0,0-11.77m75.34,0H273.39a5.89,5.89,0,1,0,0,11.77h23.54a5.89,5.89,0,1,0,0-11.77"/>
+            </g>
+            <text class="cls-13" transform="translate(209.82 527.95)">GAME</text>
+            <circle class="cls-11" cx="247.49" cy="430.92" r="135.96"/>
+            <text fill="white" class="cls-14">
+                <textPath startOffset="-100%" href="#tPath1">Term Hash: 0x123123123123123123123123123123123123123123123123123
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+                <textPath startOffset="0" href="#tPath1">Term Hash: 0x123123123123123123123123123123123123123123123123123
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+            </text>
+            <path class="cls-16"
+                  d="M201.73,736.36H66.06c-31.19,0-56.47-24.36-56.47-54.42V379.57a5.42,5.42,0,0,1,5.51-5.31h19a5.42,5.42,0,0,1,5.51,5.31V681.94c0,14.09,11.85,25.51,26.47,25.51H201.73a5.42,5.42,0,0,1,5.51,5.31v18.29A5.42,5.42,0,0,1,201.73,736.36Z"/>
+            <text fill="white" class="cls-14">
+                <textPath startOffset="-200%" href="#tPath2">Vault Address: 0x671EC5a560dF1033b3A7dAe80C042540bFDCf377
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="200%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+                <textPath startOffset="0" href="#tPath2">Vault Address: 0x671EC5a560dF1033b3A7dAe80C042540bFDCf377
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="200%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+            </text>
+            <path class="cls-16" d="M23.11,374V66.41c0-24.82,21-44.94,47-44.94H416c25.94,0,47,20.12,47,44.94V331.58"/>
+            <circle class="cls-8" cx="462.94" cy="339.19" r="10.03"/>
+            <circle class="cls-8" cx="242.11" cy="722.19" r="10.03"/>
+            <text fill="white" class="cls-14">
+                <textPath startOffset="-100%" href="#tPath3">Address: 0x671EC5a560dF1033b3A7dAe80C042540bFDCf377
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+                <textPath startOffset="0" href="#tPath3">Address: 0x671EC5a560dF1033b3A7dAe80C042540bFDCf377
+                    <animate xmlns="http://www.w3.org/2000/svg" additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="13s" repeatCount="indefinite"/>
+                </textPath>
+            </text>
+            <rect class="cls-16 cls-19" x="448" y="374" width="30" height="316" rx="6.94"/>
+            <path class="cls-16" d="M462.94,690.45V692a30,30,0,0,1-30,30H238"/>
+            <rect class="cls-9" x="307.09" y="155" width="112" height="28" rx="6.68"/>
+            <text class="cls-20" transform="translate(350.75 175.27)">TICKET</text>
+            <path xmlns="http://www.w3.org/2000/svg" class="cls-8" d="M339.23,167.67h.46V163a1.82,1.82,0,0,0-1.81-1.82H316.75a1.82,1.82,0,0,0-1.81,1.82v4.68h.46a2.79,2.79,0,0,1,2.79,2.79,2.8,2.8,0,0,1-2.79,2.78h-.46v4.84a1.81,1.81,0,0,0,1.81,1.81h21.13a1.81,1.81,0,0,0,1.81-1.81v-4.84h-.46a2.78,2.78,0,0,1-2-4.75A2.77,2.77,0,0,1,339.23,167.67Zm-6.34,6.19H322.06a.78.78,0,1,1,0-1.55h10.83a.78.78,0,0,1,0,1.55Zm0-5.42H322.06a.77.77,0,1,1,0-1.54h10.83a.77.77,0,1,1,0,1.54Z"/>
+<!--            <path class="cls-8"-->
+<!--                  d="M316.24,165.19l8.44,3.72a1.57,1.57,0,0,1,.93,1.43v9.39l-8.35-3.09a1.57,1.57,0,0,1-1-1.46v-10Zm21.87,0v10a1.57,1.57,0,0,1-1,1.46l-8.36,3.09v-9.39a1.56,1.56,0,0,1,.94-1.43l8.44-3.72Zm-11.55-7.06a1.55,1.55,0,0,1,1.23,0l10.32,4.42L327.79,167a1.55,1.55,0,0,1-1.23,0l-10.32-4.42Z"/>-->
+            <path class="cls-8"
+                  d="M403.18,49.3H363.36a4.81,4.81,0,0,0,0,9.62h14V86.39a4.81,4.81,0,0,0,4.81,4.81h2.13a4.82,4.82,0,0,0,4.81-4.81V58.92h14a4.81,4.81,0,1,0,0-9.62Z"/>
+        </g>
+    </g>
+</svg>

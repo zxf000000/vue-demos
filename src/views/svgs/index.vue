@@ -1,5 +1,8 @@
 <template>
   <div id="svg-container">
+    <test-card></test-card>
+    <test-filters></test-filters>
+    <img :src="testImg"/>
     <canvas ref="canvas" id="canvas-content"></canvas>
     <AchimedeanSpiral class="item"></AchimedeanSpiral>
   </div>
@@ -8,16 +11,20 @@
 <script>
 import AchimedeanSpiral from "@/views/svgs/AchimedeanSpiral";
 import brush from '@/assets/img/brush.png';
+import testImg from '@/assets/img/test.svg';
+import TestFilters from "@/views/svgs/test-filters";
+import TestCard from "@/views/svgs/test-card";
 
 export default {
   name: "Svgs",
-  components: { AchimedeanSpiral},
+  components: {TestFilters, AchimedeanSpiral, TestCard},
   data() {
     return {
       context: null,
       brush: null,
       isDown: false,
       lastPoint: {x: 0, y: 0},
+      testImg,
     }
   },
   methods: {
